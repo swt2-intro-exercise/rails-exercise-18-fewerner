@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe NewAuthorController, type: :controller do
+RSpec.describe AuthorsController, type: :controller do
 
-  describe "GET #new_author_page" do
+  describe "GET #new" do
     it "returns http success" do
-      get :new_author_page
+      get :new
       expect(response).to have_http_status(:success)
     end
   end

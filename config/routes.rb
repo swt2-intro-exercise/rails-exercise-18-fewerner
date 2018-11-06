@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "new_author", to: "new_author#new_author_page"
+  get "new_author", to: "authors#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rails routes".
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
