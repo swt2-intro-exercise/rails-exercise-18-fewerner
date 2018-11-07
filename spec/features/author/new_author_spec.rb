@@ -24,7 +24,7 @@ describe "New author page", type: :feature do
 
     find('input[type="submit"]').click
 
-    expect(autor.exists?(firstname: 'Alan', lastname: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'))
+    expect(Author.exists?(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'))
 
   end
 end
