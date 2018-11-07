@@ -27,6 +27,10 @@ describe "Authors edit page", type: :feature do
         expect(Author.exists?(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'))
     
       end
+      it "should have a link to author index page" do
+        visit edit_author_path(author)
+        expect(page).to have_link 'Back', href: authors_path
+    end
 
 
 end
