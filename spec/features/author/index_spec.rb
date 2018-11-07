@@ -19,6 +19,11 @@ describe "Authors index page", type: :feature do
         expect(page).to have_link 'Details', href: author_path(author)
     end
 
+    it "should have a link to each authors edit page" do
+        visit authors_path
+        expect(page).to have_link 'Edit', href: edit_author_path(author)
+    end
+
     it 'should have a table listing the full names as well as homepages of autors ' do
         visit authors_path
         expect(page).to have_table 
