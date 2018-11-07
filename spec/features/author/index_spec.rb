@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe "Authors index page", type: :feature do      
-    before :all do
-        @author = FactoryBot.create(:author)
-    end
+
+    author = Author.create(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
 
     it "should render without error" do
         visit authors_path
@@ -17,7 +16,7 @@ describe "Authors index page", type: :feature do
 
     it "should have a link to each authors details" do
         visit authors_path
-        expect(page).to have_link 'Details', href: author_path(@author)
+        expect(page).to have_link 'Details', href: author_path(author)
     end
 
     it 'should have a table listing the full names as well as homepages of autors ' do
@@ -25,7 +24,7 @@ describe "Authors index page", type: :feature do
         expect(page).to have_table 
     end
 
-    it 'should have a table with first and last name in one column called Name' do
+    it 'should have a table with first and last name in one column called Name' do   
         visit authors_path
         expect(page).to have_css('table th', text: 'Name')
     end
