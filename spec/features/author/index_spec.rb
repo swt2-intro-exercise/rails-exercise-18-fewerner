@@ -27,7 +27,7 @@ describe "Authors index page", type: :feature do
 
     it 'should have a table with first and last name in one column called Name' do
         visit authors_path
-        expect(page).to have_css('table td', text: 'Name')
+        expect(page).to have_css('table th', text: 'Name')
     end
 
 end
