@@ -10,12 +10,18 @@
   </thead>
 
   <tbody>
+    <tr>
+        <td> First Name </td>
+        <td> Last Name </td>
+        <td> Homepage </td>
+    </tr>
     <% @authors.each do |author| %>
       <tr>
-        <td><%= link_to 'Show', author %></td>
-        <td><%= link_to 'Edit', edit_author_path(author) %></td>
-        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= author.first_name %></td>
+        <td><%= author.last_name %></td>
+        <td><%= author.homepage %></td>
+        <td><%= link_to 'Details', author_path(author) %></td>
+        </tr>
     <% end %>
   </tbody>
 </table>
