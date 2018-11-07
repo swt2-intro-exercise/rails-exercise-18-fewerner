@@ -27,4 +27,5 @@ describe "New author page", type: :feature do
     expect(Author.exists?(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'))
 
   end
+
 end
