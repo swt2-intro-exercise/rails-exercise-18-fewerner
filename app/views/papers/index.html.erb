@@ -19,8 +19,6 @@
         <td><%= paper.title %></td>
         <td><%= paper.venue %></td>
         <td><%= paper.year %></td>
-        
-        <td><% paper.authors.each do |author| %> <%=author.name %> <%end%></td></td>
         <td><%= link_to 'Details', paper %></td>
         <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
         <td><%= link_to 'Delete', paper, method: :delete %></td>
