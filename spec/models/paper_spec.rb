@@ -14,12 +14,12 @@ describe Paper, type: :model do
     end
 
     it 'should fail for a paper without a title, venue or year' do
-        paper = Paper.new(first_name: "", last_name:"", homepage:"")
+        paper = Paper.new(title: "", venue:"", year:"")
         expect(paper).to_not be_valid
     end
 
     it 'should fail for year that is not an integer ' do
-        paper = Paper.new(first_name: "", last_name:"", homepage:"eleven")
+        paper = Paper.new(title: "", venue:"", year:"eleven")
         expect(paper).to_not be_valid
     end
 end
