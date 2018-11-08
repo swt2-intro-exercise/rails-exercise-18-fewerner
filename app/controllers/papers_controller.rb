@@ -1,11 +1,13 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
+  
   def new
     @paper = Paper.new
   end
 
   def index
     @papers = Paper.all
+    @papers = @papers.year(params[:year]) if params[:year].present?
   end
 
   def show
