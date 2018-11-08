@@ -36,5 +36,15 @@ describe "Papers index page", type: :feature do
         expect(page).to have_table 
     end
 
+    it "should filter papers by year" do
+        secondpaper = Paper.create(title: 'test', venue: 'test', year: 0)
+
+        visit papers_path.concat("?year=#{paper.year}")
+
+        expect(page).to have_text(paper.title)
+        expect(page).not_to have_text(secondpaper.title)
+
+    end
+
  
 end
