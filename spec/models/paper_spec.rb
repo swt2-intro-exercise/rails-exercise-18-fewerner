@@ -13,6 +13,11 @@ describe Paper, type: :model do
                 
     end
 
+    it 'should have an empty list of authors' do
+        paper = FactoryBot.create(:paper)
+        expect(paper.authors).to eq(nil)
+    end
+
     it 'should fail for a paper without a title, venue or year' do
         paper = Paper.new(title: "", venue:"", year:"")
         expect(paper).to_not be_valid
