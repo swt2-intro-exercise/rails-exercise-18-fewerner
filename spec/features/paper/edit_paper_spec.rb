@@ -29,6 +29,21 @@ describe "papers edit page", type: :feature do
         expect(Paper.exists?(title: 'a', venue: 'b', year: 'c'))
     
     end
+    it "should edit the papers database entry when form is submitted" do
+        author = Author.create(first_name: 'Peter', last_name: 'Plagiarist', homepage:'')
+        count = paper.authors.count
+        visit edit_paper_path(paper)
+
+       
+        page.find('select#author_ids').select('Peter Plagiarist')
+        
+
+        find('input[type="submit"]').click
+        
+            paper.reload
+            expect(paper.authors.count).to eq (count + 1)
+            expect(paper.authors).to include(author)
+    end
     it "should have a link to paper index page" do
         visit edit_paper_path(paper)
         expect(page).to have_link 'Back', href: papers_path
