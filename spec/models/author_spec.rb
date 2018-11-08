@@ -17,7 +17,7 @@ describe Author, type: :model do
         expect(author.name).to eq("Alan Turing")
     end
 
-    it 'should not fail for an authour without a last name' do
+    it 'should fail for an authour without a last name' do
         author = Author.new(first_name: "Alan", last_name:"", homepage:"http://example.com")
         expect(author).to_not be_valid
     end
