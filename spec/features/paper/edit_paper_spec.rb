@@ -33,4 +33,9 @@ describe "papers edit page", type: :feature do
         visit edit_paper_path(paper)
         expect(page).to have_link 'Back', href: papers_path
     end
+
+    it "should have a multiple selectbox" do
+        visit edit_paper_path(paper)
+        expect(page).to have_css(select[multiple])
+    end
 end
