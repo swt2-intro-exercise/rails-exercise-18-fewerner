@@ -35,4 +35,12 @@ describe "Papers index page", type: :feature do
         visit papers_path
         expect(page).to have_table 
     end
+
+    it 'should display the authors of the paper' do
+        visit papers_path
+
+        paper.authors.each do |author|
+            expect(page).to have_text  author.first_name + " " + author.last_name
+        end
+    end
 end
