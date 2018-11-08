@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Authors index page", type: :feature do      
 
-    author = Author.create(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
+    author = FactoryBot.create(:author)
 
     it "should render without error" do
         visit authors_path

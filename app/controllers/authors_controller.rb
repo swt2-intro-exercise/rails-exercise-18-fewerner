@@ -23,6 +23,7 @@ class AuthorsController < ApplicationController
       render 'new'
     end
   end
+  
   def destroy
     @author = Author.find(params[:id])
     @author.destroy

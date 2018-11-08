@@ -1,6 +1,8 @@
+require 'rails_helper'
+
 describe "Authors edit page", type: :feature do 
 
-    author = Author.create(first_name:'Alan', last_name: 'Turing', homepage: 'http://example.com')
+    author = FactoryBot.create(:author)
 
     it "should render withour error" do
         visit edit_author_path(author)
@@ -24,7 +26,7 @@ describe "Authors edit page", type: :feature do
     
         find('input[type="submit"]').click
     
-        expect(Author.exists?(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'))
+        expect(Author.exists?(first_name: 'Alan', last_name: 'Mathison', homepage: 'http://wikipedia.org/Alan_Turing'))
     
     end
     it "should have a link to author index page" do
