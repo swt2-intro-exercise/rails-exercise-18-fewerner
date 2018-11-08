@@ -4,7 +4,7 @@ describe "papers edit page", type: :feature do
 
     paper = FactoryBot.create(:paper)
 
-    it "should render withour error" do
+    it "should render without error" do
         visit edit_paper_path(paper)
     end
 
@@ -36,6 +36,6 @@ describe "papers edit page", type: :feature do
 
     it "should have a multiple selectbox" do
         visit edit_paper_path(paper)
-        expect(page).to have_css(select[multiple])
+        expect(page).to have_css('select[multiple]')
     end
 end
