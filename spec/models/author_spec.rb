@@ -21,4 +21,9 @@ describe Author, type: :model do
         author = Author.new(first_name: "Alan", last_name:"", homepage:"http://example.com")
         expect(author).to_not be_valid
     end
+
+    it 'should have an empty list of papers' do
+        author = FactoryBot.create(:author)
+        expect(author.papers).to eq([])
+    end
 end
